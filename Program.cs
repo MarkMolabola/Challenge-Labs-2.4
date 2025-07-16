@@ -23,11 +23,6 @@
             Console.Clear();
             Console.WriteLine(student.ToString());
 
-
-
-
-
-
         }
     }
 }
