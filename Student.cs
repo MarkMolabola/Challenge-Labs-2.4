@@ -32,15 +32,36 @@ namespace Challenge_Labs_2._4
         {
             get
             {
-                if (Percentage >= 60)
-                    return "First";
-                else if (Percentage >= 50)
-                    return "Second";
-                else if (Percentage >= 40)
-                    return "Third";
-                else
-                    return "Fail";
+                switch (Percentage)
+                {
+                    case double p when p >= 0.9:
+                        return "First Division";
+                    case double p when p >= 0.8:
+                        return "Second Division";
+                    case double p when p >= 0.7:
+                        return "Third Division";
+                    case double p when p >= 0.6:
+                        return "Fourth Division";
+                    default:
+                        return "Fail";
+                }
             }
+        }
+        public void Prompt()
+        {
+            Console.WriteLine("-----------------------Student details----------------------");
+            Console.Write("Roll Number: ");
+            RollNumber = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Name: ");
+            Name = Console.ReadLine();
+            Console.WriteLine("-----------------------Input Grades--------------------------- ");
+            Console.WriteLine("Physics:");
+            PhysicsGrade = int.Parse(Console.ReadLine());
+            Console.WriteLine("Chemistry:");
+            ChemistryGrade = int.Parse(Console.ReadLine());
+            Console.WriteLine("Computer Application:");
+            ComputerAppGrade = int.Parse(Console.ReadLine());
+            Console.WriteLine("-------------------------------------------------------------");
         }
         public override string ToString()
         {
